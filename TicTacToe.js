@@ -4,25 +4,16 @@ const random=Math.floor(Math.random()*2);
 const h1=document.getElementById("header")
 const restart=document.getElementById('restart')
 let p1=true
-let p1Symbol=""
-let p2Symbol=""
+let p1Symbol=random==1?"X":"0"
+let p2Symbol=random==1?"0":"X"
 let game=false
-if(random==1){
-    p1Symbol="X"
-    p2Symbol="0"
-}
-else{
-    p1Symbol="0"
-    p2Symbol="X"
-}
+
 function checkWin(playerSymbol) {
     if(buttons[0].innerText===playerSymbol&&buttons[1].innerText===playerSymbol&&buttons[2].innerText===playerSymbol){return true}
     if(buttons[3].innerText===playerSymbol&&buttons[4].innerText===playerSymbol&&buttons[5].innerText===playerSymbol){return true}
     if(buttons[6].innerText===playerSymbol&&buttons[7].innerText===playerSymbol&&buttons[8].innerText===playerSymbol){return true}
-
     if(buttons[0].innerText===playerSymbol&&buttons[4].innerText===playerSymbol&&buttons[8].innerText===playerSymbol){return true}
     if(buttons[2].innerText===playerSymbol&&buttons[4].innerText===playerSymbol&&buttons[6].innerText===playerSymbol){return true}
-
     if(buttons[0].innerText===playerSymbol&&buttons[3].innerText===playerSymbol&&buttons[6].innerText===playerSymbol){return true}
     if(buttons[1].innerText===playerSymbol&&buttons[4].innerText===playerSymbol&&buttons[7].innerText===playerSymbol){return true}
     if(buttons[2].innerText===playerSymbol&&buttons[5].innerText===playerSymbol&&buttons[8].innerText===playerSymbol){return true}
