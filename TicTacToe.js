@@ -2,6 +2,7 @@ const buttons=document.getElementsByClassName('grid-item')
 const start=document.getElementById('start')
 const random=Math.floor(Math.random()*2);
 const h1=document.getElementById("header")
+const restart=document.getElementById('restart')
 let p1=true
 let p1Symbol=""
 let p2Symbol=""
@@ -33,6 +34,7 @@ function checkTie(playerSymbol){
 start.addEventListener('click',()=>{
     game=true
     if(game){
+        h1.innerText=`Game Started ${p1Symbol}'s turn`
         for(let i=0;i<buttons.length;i++) {
             buttons[i].addEventListener('click', () => {
                 if (p1) {
@@ -47,8 +49,8 @@ start.addEventListener('click',()=>{
                     else if(checkTie()){
                         h1.innerText="It's a TIE"
                         Array.from(buttons).every(button=>button.disabled=true)
+                        game=false
                     }
-
                 }
                 else{
                     h1.innerText=`${p1Symbol}'s turn`
@@ -62,13 +64,22 @@ start.addEventListener('click',()=>{
                     else if(checkTie()){
                         h1.innerText="It's a TIE"
                         Array.from(buttons).every(button=>button.disabled=true)
+                        game=false
                     }
-
                 }
                 buttons[i].disabled=true
             })
         }
     }
+    start.disabled=true
+})
+restart.addEventListener('click',()=>{
+    h1.innerText='Welcome To Tic-Tac-Toe'
+    for(let i=0;i<buttons.length;i++){
+        buttons[i].innerText=""
+        buttons[i].disabled=false
+    }
+    game=true
 })
 
 

@@ -39,7 +39,17 @@ body {
 }
 
 .start-button {
-    padding: 10px 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.restart-button {
+    padding: 10px 15px;
+    margin-left: 10px;
     font-size: 18px;
     background-color: #4CAF50;
     color: white;
@@ -49,6 +59,9 @@ body {
 }
 
 .start-button:hover {
+    background-color: #45a049;
+}
+.restart-button:hover {
     background-color: #45a049;
 }
 
